@@ -96,6 +96,7 @@ if __name__ == '__main__':
     deck = Deck()
     players = []
 
+    #Setup Game
     for i, player in enumerate(NAMES):
         players.append(Player(player, i))
     
@@ -107,4 +108,20 @@ if __name__ == '__main__':
     # discard_pile = create_discard_pile(deck)
     # print(discard_pile[-1])
     print(deck.deck)
-
+    #End Setup Game
+    for player in players:
+        while True:
+            print("Its " + player.name + "'s turn!")
+            for i, card in enumerate(player.hand):
+                print(f"{i+1}: {card}")
+            # print(player + player.deck())
+            card_selected = input("Play your card [enter number] ")
+            print(player.hand)
+            try:
+                card_id = int(card_selected)
+                card_playing = player.hand[card_id-1]
+                print(card_playing)
+                break
+            except:
+                print("That is not a valid number, you have fourfitted your turn.")
+                continue
