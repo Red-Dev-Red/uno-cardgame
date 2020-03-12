@@ -51,7 +51,7 @@ class SkipCard:
 
 class DrawCard:
     def __init__(self, c):
-        DrawCard.color = c
+        self.color = c
 
     def __str__(self):
         return self.color + "Draw 2"
@@ -107,3 +107,4 @@ if __name__ == '__main__':
     # discard_pile = create_discard_pile(deck)
     # print(discard_pile[-1])
     print(deck.deck)
+
